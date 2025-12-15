@@ -7,12 +7,33 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 
 <body>
-	<h1>Error 404:YOU ARE TRAPPED INSIDE THE  INTERNET</h1>
+	<h1> Error 404:
+  <span class="glitch" data-text="YOU ARE TRAPPED INSIDE THE INTERNET">
+    YOU ARE TRAPPED INSIDE THE INTERNET
+  </span></h1>
 	<p>You wake up inside a screen. The air hums like WiFi. A voice says: “Choose wisely. Only one link leads out.”</p>
 	<p> <a href="options/optionone.html"> THE ENDLESS SCROLL</a> </p>
 	<p> <a href="options/optiontwo.html"> THE COMMENT SECTION</a></p>
 	<p> <a href="options/optionfour.html"> THE CULTURE PORTAL</a></p>
 	<p> <a href="options/optionthree.html"> THE RECORD BUTTON</a></p>
+	<audio id="glitchAudio" loop>
+  <source src="glitch.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const audio = document.getElementById("glitchAudio");
+
+  const startAudio = () => {
+    audio.volume = 0.25;
+    audio.play();
+    document.removeEventListener("click", startAudio);
+    document.removeEventListener("keydown", startAudio);
+  };
+
+  document.addEventListener("click", startAudio);
+  document.addEventListener("keydown", startAudio);
+</script>
+
 </body>
 
 </html> 
